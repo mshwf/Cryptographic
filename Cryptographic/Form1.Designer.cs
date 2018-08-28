@@ -38,12 +38,16 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonEncryptFile
             // 
-            this.buttonEncryptFile.Location = new System.Drawing.Point(88, 12);
+            this.buttonEncryptFile.Location = new System.Drawing.Point(88, 35);
             this.buttonEncryptFile.Name = "buttonEncryptFile";
             this.buttonEncryptFile.Size = new System.Drawing.Size(75, 23);
             this.buttonEncryptFile.TabIndex = 6;
@@ -53,7 +57,7 @@
             // 
             // buttonDecryptFile
             // 
-            this.buttonDecryptFile.Location = new System.Drawing.Point(88, 41);
+            this.buttonDecryptFile.Location = new System.Drawing.Point(88, 64);
             this.buttonDecryptFile.Name = "buttonDecryptFile";
             this.buttonDecryptFile.Size = new System.Drawing.Size(75, 23);
             this.buttonDecryptFile.TabIndex = 7;
@@ -63,7 +67,7 @@
             // 
             // buttonGetPrivateKey
             // 
-            this.buttonGetPrivateKey.Location = new System.Drawing.Point(74, 157);
+            this.buttonGetPrivateKey.Location = new System.Drawing.Point(74, 180);
             this.buttonGetPrivateKey.Name = "buttonGetPrivateKey";
             this.buttonGetPrivateKey.Size = new System.Drawing.Size(102, 23);
             this.buttonGetPrivateKey.TabIndex = 11;
@@ -73,7 +77,7 @@
             // 
             // buttonImportPublicKey
             // 
-            this.buttonImportPublicKey.Location = new System.Drawing.Point(69, 128);
+            this.buttonImportPublicKey.Location = new System.Drawing.Point(69, 151);
             this.buttonImportPublicKey.Name = "buttonImportPublicKey";
             this.buttonImportPublicKey.Size = new System.Drawing.Size(113, 23);
             this.buttonImportPublicKey.TabIndex = 10;
@@ -83,7 +87,7 @@
             // 
             // buttonExportPublicKey
             // 
-            this.buttonExportPublicKey.Location = new System.Drawing.Point(69, 99);
+            this.buttonExportPublicKey.Location = new System.Drawing.Point(69, 122);
             this.buttonExportPublicKey.Name = "buttonExportPublicKey";
             this.buttonExportPublicKey.Size = new System.Drawing.Size(113, 23);
             this.buttonExportPublicKey.TabIndex = 9;
@@ -93,7 +97,7 @@
             // 
             // buttonCreateAsmKeys
             // 
-            this.buttonCreateAsmKeys.Location = new System.Drawing.Point(69, 70);
+            this.buttonCreateAsmKeys.Location = new System.Drawing.Point(69, 93);
             this.buttonCreateAsmKeys.Name = "buttonCreateAsmKeys";
             this.buttonCreateAsmKeys.Size = new System.Drawing.Size(113, 23);
             this.buttonCreateAsmKeys.TabIndex = 8;
@@ -113,7 +117,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 206);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 235);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(262, 22);
             this.statusStrip1.TabIndex = 12;
@@ -125,12 +129,38 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(262, 24);
+            this.menuStrip1.TabIndex = 13;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSettings});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.settingsToolStripMenuItem.Text = "File";
+            // 
+            // mnuSettings
+            // 
+            this.mnuSettings.Name = "mnuSettings";
+            this.mnuSettings.Size = new System.Drawing.Size(180, 22);
+            this.mnuSettings.Text = "Settings";
+            this.mnuSettings.Click += new System.EventHandler(this.mnuSettings_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(262, 228);
+            this.ClientSize = new System.Drawing.Size(262, 257);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.buttonEncryptFile);
             this.Controls.Add(this.buttonDecryptFile);
             this.Controls.Add(this.buttonGetPrivateKey);
@@ -138,12 +168,15 @@
             this.Controls.Add(this.buttonExportPublicKey);
             this.Controls.Add(this.buttonCreateAsmKeys);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,6 +194,9 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuSettings;
     }
 }
 

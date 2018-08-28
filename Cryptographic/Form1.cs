@@ -6,6 +6,7 @@ using System;
 using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
+using System.Xml;
 
 namespace Cryptographic
 {
@@ -32,9 +33,43 @@ namespace Cryptographic
         public Form1()
         {
             InitializeComponent();
+            CreateInitialFolders();
+
         }
 
+        private void CreateInitialFolders()
+        {
+            XmlDocument document = new XmlDocument();
+            document.Load("initialData.xml");
+            var encryptedDirNode = document.SelectSingleNode("initialDirectories/encryptedDir").InnerText = "fgsg";
+            var decryptedDirNode = document.SelectSingleNode("initialDirectories/decryptedDir").InnerText = "sss";
+            document.Save("initialData.xml");
 
+            //if (encryptedDirNode.InnerText == "")
+            //{
+            //    encryptedDirNode.InnerText = GetPath();
+            //}
+            //if (decryptedDirNode.InnerText == "")
+            //{
+            //    decryptedDirNode.InnerText = GetPath();
+            //}
+            document.Save("initialData.xml");
+            //Directory.CreateDirectory()
+        }
+        private string GetPath()
+        {
+            string path = "";
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    path = fbd.SelectedPath;
+                }
+            }
+            return path;
+        }
         private void buttonCreateAsmKeys_Click(object sender, EventArgs e)
         {
             // Stores a key pair in the key container.
@@ -45,7 +80,6 @@ namespace Cryptographic
                 toolStripStatusLabel1.Text = "Key: " + cspp.KeyContainerName + " - Public Only";
             else
                 toolStripStatusLabel1.Text = "Key: " + cspp.KeyContainerName + " - Full Key Pair";
-
         }
 
         private void buttonEncryptFile_Click(object sender, EventArgs e)
@@ -54,7 +88,6 @@ namespace Cryptographic
                 MessageBox.Show("Key not set.");
             else
             {
-
                 // Display a dialog box to select a file to encrypt.
                 openFileDialog1.InitialDirectory = SrcFolder;
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -320,6 +353,12 @@ namespace Cryptographic
             else
                 toolStripStatusLabel1.Text = "Key: " + cspp.KeyContainerName + " - Full Key Pair";
 
+        }
+
+        private void mnuSettings_Click(object sender, EventArgs e)
+        {
+            Frm_Settings frm = new Frm_Settings();
+            frm.ShowDialog();
         }
     }
 }
