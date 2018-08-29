@@ -2,5 +2,5 @@
 <initialDirectories>
   <encryptedDir></encryptedDir>
   <decryptedDir></decryptedDir>
-  <srcDir></srcDir>
+  <pubKeyFile></pubKeyFile>
 </initialDirectories>

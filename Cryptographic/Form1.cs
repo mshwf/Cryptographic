@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
 using System.Xml;
+using Cryptographic.Utilities;
 
 namespace Cryptographic
 {
@@ -19,12 +20,12 @@ namespace Cryptographic
 
         // Path variables for source, encryption, and
         // decryption folders. Must end with a backslash.
-        const string EncrFolder = @"D:\Encryption\Encrypt\";
-        const string DecrFolder = @"D:\Encryption\Decrypt\";
-        const string SrcFolder = @"D:\Encryption\docs\";
+        string EncrFolder = @"";
+        string DecrFolder = @"";
+        //string SrcFolder = @"D:\Encryption\docs\";
 
         // Public key file
-        const string PubKeyFile = @"c:\encrypt\rsaPublicKey.txt";
+        string PubKeyFile = @"";
 
         // Key container name for
         // private/public key value pair.
@@ -33,29 +34,16 @@ namespace Cryptographic
         public Form1()
         {
             InitializeComponent();
-            CreateInitialFolders();
-
+            SetFoldersPaths();
         }
 
-        private void CreateInitialFolders()
+        private void SetFoldersPaths()
         {
-            XmlDocument document = new XmlDocument();
-            document.Load("initialData.xml");
-            var encryptedDirNode = document.SelectSingleNode("initialDirectories/encryptedDir").InnerText = "fgsg";
-            var decryptedDirNode = document.SelectSingleNode("initialDirectories/decryptedDir").InnerText = "sss";
-            document.Save("initialData.xml");
-
-            //if (encryptedDirNode.InnerText == "")
-            //{
-            //    encryptedDirNode.InnerText = GetPath();
-            //}
-            //if (decryptedDirNode.InnerText == "")
-            //{
-            //    decryptedDirNode.InnerText = GetPath();
-            //}
-            document.Save("initialData.xml");
-            //Directory.CreateDirectory()
+            EncrFolder = DirectorySettings.EncryptedFilesDirectory;
+            DecrFolder = DirectorySettings.DecryptedFilesDirectory;
+            PubKeyFile = DirectorySettings.PublicKeyFile;
         }
+
         private string GetPath()
         {
             string path = "";
@@ -89,7 +77,7 @@ namespace Cryptographic
             else
             {
                 // Display a dialog box to select a file to encrypt.
-                openFileDialog1.InitialDirectory = SrcFolder;
+                //openFileDialog1.InitialDirectory = SrcFolder;
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     string fName = openFileDialog1.FileName;
@@ -311,9 +299,7 @@ namespace Cryptographic
                 }
                 inFs.Close();
             }
-
         }
-
 
         void buttonExportPublicKey_Click(object sender, System.EventArgs e)
         {
@@ -345,8 +331,10 @@ namespace Cryptographic
         {
             cspp.KeyContainerName = keyName;
 
-            rsa = new RSACryptoServiceProvider(cspp);
-            rsa.PersistKeyInCsp = true;
+            rsa = new RSACryptoServiceProvider(cspp)
+            {
+                PersistKeyInCsp = true
+            };
 
             if (rsa.PublicOnly == true)
                 toolStripStatusLabel1.Text = "Key: " + cspp.KeyContainerName + " - Public Only";
@@ -359,6 +347,11 @@ namespace Cryptographic
         {
             Frm_Settings frm = new Frm_Settings();
             frm.ShowDialog();
+        }
+
+        private void mnuExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

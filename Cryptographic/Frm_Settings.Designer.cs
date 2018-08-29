@@ -34,9 +34,12 @@
             this.txtDecDir = new System.Windows.Forms.TextBox();
             this.btnSelectEncDir = new System.Windows.Forms.Button();
             this.btnSelectDecDir = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.folderBrowserDialog2 = new System.Windows.Forms.FolderBrowserDialog();
+            this.btnSelectPubKeyDir = new System.Windows.Forms.Button();
+            this.txtPubKeyDir = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -44,7 +47,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(5, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 13);
+            this.label1.Size = new System.Drawing.Size(124, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Encrypted Files Directory";
             // 
@@ -53,7 +56,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(5, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 13);
+            this.label2.Size = new System.Drawing.Size(125, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Decrypted Files Directory";
             // 
@@ -91,23 +94,47 @@
             this.btnSelectDecDir.TabIndex = 5;
             this.btnSelectDecDir.Text = "...";
             this.btnSelectDecDir.UseVisualStyleBackColor = true;
+            this.btnSelectDecDir.Click += new System.EventHandler(this.btnSelectDecDir_Click);
             // 
-            // btnSave
+            // btnSelectPubKeyDir
             // 
-            this.btnSave.Location = new System.Drawing.Point(429, 79);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSelectPubKeyDir.Location = new System.Drawing.Point(510, 78);
+            this.btnSelectPubKeyDir.Name = "btnSelectPubKeyDir";
+            this.btnSelectPubKeyDir.Size = new System.Drawing.Size(40, 25);
+            this.btnSelectPubKeyDir.TabIndex = 8;
+            this.btnSelectPubKeyDir.Text = "...";
+            this.btnSelectPubKeyDir.UseVisualStyleBackColor = true;
+            this.btnSelectPubKeyDir.Click += new System.EventHandler(this.btnSelectPubKeyDir_Click);
+            // 
+            // txtPubKeyDir
+            // 
+            this.txtPubKeyDir.Location = new System.Drawing.Point(135, 80);
+            this.txtPubKeyDir.Name = "txtPubKeyDir";
+            this.txtPubKeyDir.ReadOnly = true;
+            this.txtPubKeyDir.Size = new System.Drawing.Size(369, 20);
+            this.txtPubKeyDir.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Public Key File Directory";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Frm_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 106);
-            this.Controls.Add(this.btnSave);
+            this.ClientSize = new System.Drawing.Size(554, 134);
+            this.Controls.Add(this.btnSelectPubKeyDir);
+            this.Controls.Add(this.txtPubKeyDir);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSelectDecDir);
             this.Controls.Add(this.btnSelectEncDir);
             this.Controls.Add(this.txtDecDir);
@@ -133,8 +160,11 @@
         private System.Windows.Forms.TextBox txtDecDir;
         private System.Windows.Forms.Button btnSelectEncDir;
         private System.Windows.Forms.Button btnSelectDecDir;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog2;
+        private System.Windows.Forms.Button btnSelectPubKeyDir;
+        private System.Windows.Forms.TextBox txtPubKeyDir;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

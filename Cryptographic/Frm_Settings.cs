@@ -13,7 +13,7 @@ namespace Cryptographic
 {
     public partial class Frm_Settings : Form
     {
-        string encDirectory, decDirectory;
+        XMLDoc doc;
         public Frm_Settings()
         {
             InitializeComponent();
@@ -21,18 +21,46 @@ namespace Cryptographic
 
         private void Frm_Settings_Load(object sender, EventArgs e)
         {
-            txtEncDir.Text = XMLHelper.GetValueOf("encryptedDir");
-            txtDecDir.Text = XMLHelper.GetValueOf("decryptedDir");
+            Init();
         }
 
         private void btnSelectEncDir_Click(object sender, EventArgs e)
         {
-
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                doc.SetValueOf(AppConstants.ENC_DIR, folderBrowserDialog1.SelectedPath);
+                doc.SaveDoc();
+                Init();
+            }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSelectDecDir_Click(object sender, EventArgs e)
         {
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                doc.SetValueOf(AppConstants.DEC_DIR, folderBrowserDialog1.SelectedPath);
+                doc.SaveDoc();
+                Init();
+            }
+        }
 
+        private void Init()
+        {
+            doc = new XMLDoc("initialData.xml");
+            txtEncDir.Text = doc.GetValueOf(AppConstants.ENC_DIR);
+            txtDecDir.Text = doc.GetValueOf(AppConstants.DEC_DIR);
+            txtPubKeyDir.Text = doc.GetValueOf(AppConstants.PUBKEY_FILE);
+        }
+
+        private void btnSelectPubKeyDir_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Text Files| *.txt";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                doc.SetValueOf(AppConstants.PUBKEY_FILE, openFileDialog1.FileName);
+                doc.SaveDoc();
+                Init();
+            }
         }
     }
 }
