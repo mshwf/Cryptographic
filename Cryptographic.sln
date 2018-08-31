@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptographic.UI", "Cryptographic\Cryptographic.UI.csproj", "{E3D985A0-05FC-49DD-9B9A-17C64DCD5E07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptographic.UI", "Cryptographic.UI\Cryptographic.UI.csproj", "{E3D985A0-05FC-49DD-9B9A-17C64DCD5E07}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptographic.Tests", "Cryptographic.Tests\Cryptographic.Tests.csproj", "{840F4968-CADF-4F43-A453-E4FC885351B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptogrphic", "Cryptogrphic\Cryptogrphic.csproj", "{D43145FF-CF0E-4428-A6E3-D990FC6E10E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptographic", "Cryptographic\Cryptographic.csproj", "{D43145FF-CF0E-4428-A6E3-D990FC6E10E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

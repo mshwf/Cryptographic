@@ -1,5 +1,4 @@
 ﻿using System;
-using Cryptographic.UI;
 using Cryptographic.UI.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

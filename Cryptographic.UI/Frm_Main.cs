@@ -5,9 +5,8 @@ https://docs.microsoft.com/en-us/dotnet/standard/security/walkthrough-creating-a
 using System;
 using System.Windows.Forms;
 using System.IO;
-using System.Security.Cryptography;
 using Cryptographic.UI.Utilities;
-using Cryptogrphic.Cryptos;
+using Cryptographic.Cryptos;
 
 namespace Cryptographic.UI
 {

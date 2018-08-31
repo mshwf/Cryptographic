@@ -56,13 +56,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cryptographic\Cryptographic.UI.csproj">
+    <ProjectReference Include="..\Cryptographic.UI\Cryptographic.UI.csproj">
       <Project>{e3d985a0-05fc-49dd-9b9a-17c64dcd5e07}</Project>
       <Name>Cryptographic.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Cryptogrphic\Cryptogrphic.csproj">
+    <ProjectReference Include="..\Cryptographic\Cryptographic.csproj">
       <Project>{d43145ff-cf0e-4428-a6e3-d990fc6e10e2}</Project>
-      <Name>Cryptogrphic</Name>
+      <Name>Cryptographic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

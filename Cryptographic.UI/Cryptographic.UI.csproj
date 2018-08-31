@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E3D985A0-05FC-49DD-9B9A-17C64DCD5E07}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Cryptographic</RootNamespace>
+    <RootNamespace>Cryptographic.UI</RootNamespace>
     <AssemblyName>Cryptographic.UI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -96,9 +96,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cryptogrphic\Cryptogrphic.csproj">
+    <ProjectReference Include="..\Cryptographic\Cryptographic.csproj">
       <Project>{d43145ff-cf0e-4428-a6e3-d990fc6e10e2}</Project>
-      <Name>Cryptogrphic</Name>
+      <Name>Cryptographic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

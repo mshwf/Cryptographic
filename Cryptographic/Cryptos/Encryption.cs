@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace Cryptogrphic.Cryptos
+namespace Cryptographic.Cryptos
 {
     public class Encryption
     {
