@@ -2,7 +2,7 @@
 using System.Xml;
 using System.Xml.Linq;
 
-namespace Cryptographic.UI.Utilities
+namespace Cryptor.UI.Utilities
 {
     public class XMLDoc
     {

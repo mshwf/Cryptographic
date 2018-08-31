@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E3D985A0-05FC-49DD-9B9A-17C64DCD5E07}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Cryptographic.UI</RootNamespace>
-    <AssemblyName>Cryptographic.UI</AssemblyName>
+    <RootNamespace>Cryptor.UI</RootNamespace>
+    <AssemblyName>Cryptor.UI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -61,6 +61,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\AppConstants.cs" />
+    <Compile Include="Utilities\Extensions.cs" />
     <Compile Include="Utilities\XMLDoc.cs" />
     <EmbeddedResource Include="Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
@@ -96,9 +97,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cryptographic\Cryptographic.csproj">
+    <ProjectReference Include="..\Cryptor\Cryptor.csproj">
       <Project>{d43145ff-cf0e-4428-a6e3-d990fc6e10e2}</Project>
-      <Name>Cryptographic</Name>
+      <Name>Cryptor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

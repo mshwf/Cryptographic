@@ -1,4 +1,4 @@
-﻿namespace Cryptographic.UI
+﻿namespace Cryptor.UI
 {
     partial class Frm_Settings
     {

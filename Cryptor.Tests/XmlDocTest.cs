@@ -1,8 +1,8 @@
 ﻿using System;
-using Cryptographic.UI.Utilities;
+using Cryptor.UI.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Cryptographic.Tests
+namespace Cryptor.Tests
 {
     [TestClass]
     public class XmlDocTest

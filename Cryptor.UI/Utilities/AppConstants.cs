@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cryptographic.UI.Utilities
+namespace Cryptor.UI.Utilities
 {
     static class AppConstants
     {

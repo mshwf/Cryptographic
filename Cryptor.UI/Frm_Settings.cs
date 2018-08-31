@@ -1,8 +1,8 @@
-﻿using Cryptographic.UI.Utilities;
+﻿using Cryptor.UI.Utilities;
 using System;
 using System.Windows.Forms;
 
-namespace Cryptographic.UI
+namespace Cryptor.UI
 {
     public partial class Frm_Settings : Form
     {

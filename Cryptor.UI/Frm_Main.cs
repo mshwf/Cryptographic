@@ -5,10 +5,10 @@ https://docs.microsoft.com/en-us/dotnet/standard/security/walkthrough-creating-a
 using System;
 using System.Windows.Forms;
 using System.IO;
-using Cryptographic.UI.Utilities;
-using Cryptographic.Cryptos;
+using Cryptor.UI.Utilities;
+using Cryptor.Cryptos;
 
-namespace Cryptographic.UI
+namespace Cryptor.UI
 {
     public partial class Frm_Main : Form
     {
@@ -38,8 +38,8 @@ namespace Cryptographic.UI
         private void SetFoldersPaths()
         {
             XMLDoc doc = new XMLDoc(AppConstants.SETTINGS_FILE_NAME);
-            encrFolder = doc.GetValueOf(AppConstants.ENC_DIR);
-            decrFolder = doc.GetValueOf(AppConstants.DEC_DIR);
+            encrFolder = doc.GetValueOf(AppConstants.ENC_DIR).AppendSlash();
+            decrFolder = doc.GetValueOf(AppConstants.DEC_DIR).AppendSlash();
             pubKeyFile = doc.GetValueOf(AppConstants.PUBKEY_FILE);
             DisableIfPathsNotSet();
         }
