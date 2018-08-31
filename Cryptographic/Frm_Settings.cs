@@ -46,7 +46,7 @@ namespace Cryptographic.UI
 
         private void Init()
         {
-            doc = new XMLDoc("initialData.xml");
+            doc = new XMLDoc(AppConstants.SETTINGS_FILE_NAME);
             txtEncDir.Text = doc.GetValueOf(AppConstants.ENC_DIR);
             txtDecDir.Text = doc.GetValueOf(AppConstants.DEC_DIR);
             txtPubKeyDir.Text = doc.GetValueOf(AppConstants.PUBKEY_FILE);
