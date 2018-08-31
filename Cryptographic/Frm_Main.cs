@@ -7,11 +7,11 @@ using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
 using System.Xml;
-using Cryptographic.Utilities;
+using Cryptographic.UI.Utilities;
 
-namespace Cryptographic
+namespace Cryptographic.UI
 {
-    public partial class Form1 : Form
+    public partial class Frm_Main : Form
     {
         // Declare CspParmeters and RsaCryptoServiceProvider
         // objects with global scope of your Form class.
@@ -31,33 +31,31 @@ namespace Cryptographic
         // private/public key value pair.
         const string keyName = "Key01";
 
-        public Form1()
+        public Frm_Main()
         {
             InitializeComponent();
-            SetFoldersPaths();
         }
 
         private void SetFoldersPaths()
         {
-            EncrFolder = DirectorySettings.EncryptedFilesDirectory;
-            DecrFolder = DirectorySettings.DecryptedFilesDirectory;
-            PubKeyFile = DirectorySettings.PublicKeyFile;
+            DirectorySettings directorySettings = new DirectorySettings();
+            EncrFolder = directorySettings.EncryptedFilesDirectory;
+            DecrFolder = directorySettings.DecryptedFilesDirectory;
+            PubKeyFile = directorySettings.PublicKeyFile;
+            DisableIfPathsNotSet();
         }
 
-        private string GetPath()
+        private void DisableIfPathsNotSet()
         {
-            string path = "";
-            using (var fbd = new FolderBrowserDialog())
+            if (!(Directory.Exists(EncrFolder) && Directory.Exists(DecrFolder) && File.Exists(PubKeyFile)))
             {
-                DialogResult result = fbd.ShowDialog();
-
-                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
-                {
-                    path = fbd.SelectedPath;
-                }
+                groupBox1.Enabled = false;
+                MessageBox.Show("Please set required paths in Settings, and make sure all paths are correct.");
             }
-            return path;
+            else
+                groupBox1.Enabled = true;
         }
+
         private void buttonCreateAsmKeys_Click(object sender, EventArgs e)
         {
             // Stores a key pair in the key container.
@@ -347,11 +345,18 @@ namespace Cryptographic
         {
             Frm_Settings frm = new Frm_Settings();
             frm.ShowDialog();
+            SetFoldersPaths();
         }
 
         private void mnuExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            SetFoldersPaths();
+
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace Cryptographic
+﻿namespace Cryptographic.UI
 {
-    partial class Form1
+    partial class Frm_Main
     {
         /// <summary>
         /// Required designer variable.
@@ -42,13 +42,15 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonEncryptFile
             // 
-            this.buttonEncryptFile.Location = new System.Drawing.Point(88, 35);
+            this.buttonEncryptFile.Location = new System.Drawing.Point(64, 16);
             this.buttonEncryptFile.Name = "buttonEncryptFile";
             this.buttonEncryptFile.Size = new System.Drawing.Size(75, 23);
             this.buttonEncryptFile.TabIndex = 6;
@@ -58,7 +60,7 @@
             // 
             // buttonDecryptFile
             // 
-            this.buttonDecryptFile.Location = new System.Drawing.Point(88, 64);
+            this.buttonDecryptFile.Location = new System.Drawing.Point(64, 45);
             this.buttonDecryptFile.Name = "buttonDecryptFile";
             this.buttonDecryptFile.Size = new System.Drawing.Size(75, 23);
             this.buttonDecryptFile.TabIndex = 7;
@@ -68,7 +70,7 @@
             // 
             // buttonGetPrivateKey
             // 
-            this.buttonGetPrivateKey.Location = new System.Drawing.Point(74, 180);
+            this.buttonGetPrivateKey.Location = new System.Drawing.Point(50, 161);
             this.buttonGetPrivateKey.Name = "buttonGetPrivateKey";
             this.buttonGetPrivateKey.Size = new System.Drawing.Size(102, 23);
             this.buttonGetPrivateKey.TabIndex = 11;
@@ -78,7 +80,7 @@
             // 
             // buttonImportPublicKey
             // 
-            this.buttonImportPublicKey.Location = new System.Drawing.Point(69, 151);
+            this.buttonImportPublicKey.Location = new System.Drawing.Point(45, 132);
             this.buttonImportPublicKey.Name = "buttonImportPublicKey";
             this.buttonImportPublicKey.Size = new System.Drawing.Size(113, 23);
             this.buttonImportPublicKey.TabIndex = 10;
@@ -88,7 +90,7 @@
             // 
             // buttonExportPublicKey
             // 
-            this.buttonExportPublicKey.Location = new System.Drawing.Point(69, 122);
+            this.buttonExportPublicKey.Location = new System.Drawing.Point(45, 103);
             this.buttonExportPublicKey.Name = "buttonExportPublicKey";
             this.buttonExportPublicKey.Size = new System.Drawing.Size(113, 23);
             this.buttonExportPublicKey.TabIndex = 9;
@@ -98,7 +100,7 @@
             // 
             // buttonCreateAsmKeys
             // 
-            this.buttonCreateAsmKeys.Location = new System.Drawing.Point(69, 93);
+            this.buttonCreateAsmKeys.Location = new System.Drawing.Point(45, 74);
             this.buttonCreateAsmKeys.Name = "buttonCreateAsmKeys";
             this.buttonCreateAsmKeys.Size = new System.Drawing.Size(113, 23);
             this.buttonCreateAsmKeys.TabIndex = 8;
@@ -152,40 +154,52 @@
             // mnuSettings
             // 
             this.mnuSettings.Name = "mnuSettings";
-            this.mnuSettings.Size = new System.Drawing.Size(180, 22);
+            this.mnuSettings.Size = new System.Drawing.Size(116, 22);
             this.mnuSettings.Text = "Settings";
             this.mnuSettings.Click += new System.EventHandler(this.mnuSettings_Click);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(180, 22);
+            this.mnuExit.Size = new System.Drawing.Size(116, 22);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
-            // Form1
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.buttonEncryptFile);
+            this.groupBox1.Controls.Add(this.buttonDecryptFile);
+            this.groupBox1.Controls.Add(this.buttonGetPrivateKey);
+            this.groupBox1.Controls.Add(this.buttonImportPublicKey);
+            this.groupBox1.Controls.Add(this.buttonExportPublicKey);
+            this.groupBox1.Controls.Add(this.buttonCreateAsmKeys);
+            this.groupBox1.Location = new System.Drawing.Point(34, 30);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(189, 193);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            // 
+            // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(262, 257);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.buttonEncryptFile);
-            this.Controls.Add(this.buttonDecryptFile);
-            this.Controls.Add(this.buttonGetPrivateKey);
-            this.Controls.Add(this.buttonImportPublicKey);
-            this.Controls.Add(this.buttonExportPublicKey);
-            this.Controls.Add(this.buttonCreateAsmKeys);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Frm_Main";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Cryptor";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,6 +221,7 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuSettings;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

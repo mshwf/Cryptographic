@@ -1,4 +1,4 @@
-﻿using Cryptographic.Utilities;
+﻿using Cryptographic.UI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cryptographic
+namespace Cryptographic.UI
 {
     public partial class Frm_Settings : Form
     {

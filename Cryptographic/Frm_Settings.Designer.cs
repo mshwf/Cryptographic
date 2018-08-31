@@ -1,4 +1,4 @@
-﻿namespace Cryptographic
+﻿namespace Cryptographic.UI
 {
     partial class Frm_Settings
     {
@@ -119,9 +119,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(5, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 13);
+            this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Public Key File Directory";
+            this.label3.Text = "Public Key File";
             // 
             // openFileDialog1
             // 
