@@ -50,6 +50,7 @@ namespace Cryptor.UI
             {
                 groupBox1.Enabled = false;
                 MessageBox.Show("Please set required paths in Settings, and make sure all paths are correct.");
+                mnuSettings_Click(null, null);
             }
             else
             {

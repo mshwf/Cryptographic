@@ -45,24 +45,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 30);
+            this.label1.Location = new System.Drawing.Point(5, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 13);
+            this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Encrypted Files Directory";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 57);
+            this.label2.Location = new System.Drawing.Point(5, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 13);
+            this.label2.Size = new System.Drawing.Size(128, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Decrypted Files Directory";
             // 
             // txtEncDir
             // 
-            this.txtEncDir.Location = new System.Drawing.Point(135, 26);
+            this.txtEncDir.Location = new System.Drawing.Point(135, 18);
             this.txtEncDir.Name = "txtEncDir";
             this.txtEncDir.ReadOnly = true;
             this.txtEncDir.Size = new System.Drawing.Size(369, 20);
@@ -70,7 +70,7 @@
             // 
             // txtDecDir
             // 
-            this.txtDecDir.Location = new System.Drawing.Point(135, 53);
+            this.txtDecDir.Location = new System.Drawing.Point(135, 44);
             this.txtDecDir.Name = "txtDecDir";
             this.txtDecDir.ReadOnly = true;
             this.txtDecDir.Size = new System.Drawing.Size(369, 20);
@@ -78,9 +78,9 @@
             // 
             // btnSelectEncDir
             // 
-            this.btnSelectEncDir.Location = new System.Drawing.Point(510, 25);
+            this.btnSelectEncDir.Location = new System.Drawing.Point(510, 16);
             this.btnSelectEncDir.Name = "btnSelectEncDir";
-            this.btnSelectEncDir.Size = new System.Drawing.Size(40, 23);
+            this.btnSelectEncDir.Size = new System.Drawing.Size(40, 25);
             this.btnSelectEncDir.TabIndex = 4;
             this.btnSelectEncDir.Text = "...";
             this.btnSelectEncDir.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@
             // 
             // btnSelectDecDir
             // 
-            this.btnSelectDecDir.Location = new System.Drawing.Point(510, 51);
+            this.btnSelectDecDir.Location = new System.Drawing.Point(510, 42);
             this.btnSelectDecDir.Name = "btnSelectDecDir";
             this.btnSelectDecDir.Size = new System.Drawing.Size(40, 25);
             this.btnSelectDecDir.TabIndex = 5;
@@ -98,7 +98,7 @@
             // 
             // btnSelectPubKeyDir
             // 
-            this.btnSelectPubKeyDir.Location = new System.Drawing.Point(510, 78);
+            this.btnSelectPubKeyDir.Location = new System.Drawing.Point(510, 68);
             this.btnSelectPubKeyDir.Name = "btnSelectPubKeyDir";
             this.btnSelectPubKeyDir.Size = new System.Drawing.Size(40, 25);
             this.btnSelectPubKeyDir.TabIndex = 8;
@@ -108,7 +108,7 @@
             // 
             // txtPubKeyDir
             // 
-            this.txtPubKeyDir.Location = new System.Drawing.Point(135, 80);
+            this.txtPubKeyDir.Location = new System.Drawing.Point(135, 70);
             this.txtPubKeyDir.Name = "txtPubKeyDir";
             this.txtPubKeyDir.ReadOnly = true;
             this.txtPubKeyDir.Size = new System.Drawing.Size(369, 20);
@@ -117,9 +117,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 84);
+            this.label3.Location = new System.Drawing.Point(5, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.Size = new System.Drawing.Size(74, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Public Key File";
             // 
@@ -131,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 134);
+            this.ClientSize = new System.Drawing.Size(554, 107);
             this.Controls.Add(this.btnSelectPubKeyDir);
             this.Controls.Add(this.txtPubKeyDir);
             this.Controls.Add(this.label3);
