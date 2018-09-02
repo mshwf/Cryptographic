@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 
 namespace Cryptor.Cryptos
 {
-    public class Encryption
+    public class Encryptor
     {
         public CspParameters Cspp { get; private set; } = new CspParameters();
         public RSACryptoServiceProvider Rsa { get; private set; }
@@ -24,7 +24,7 @@ namespace Cryptor.Cryptos
         // private/public key value pair.
         //const string keyName = "Key01";
 
-        public Encryption(string _keyName, string _encrFolder, string _decrFolder, string _pubKeyFile)
+        public Encryptor(string _keyName, string _encrFolder, string _decrFolder, string _pubKeyFile)
         {
             keyName = _keyName;
             EncrFolder = _encrFolder;

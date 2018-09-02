@@ -8,7 +8,7 @@ namespace Cryptor.UI.Utilities
 {
     static class AppConstants
     {
-        public const string SETTINGS_FILE_NAME = "initialData.xml";
+        public const string SETTINGS_FILE_NAME = "Settings.xml";
         public const string ENC_DIR = "encryptedDir";
         public const string DEC_DIR = "decryptedDir";
         public const string PUBKEY_FILE = "pubKeyFile";

@@ -12,7 +12,7 @@ namespace Cryptor.UI
 {
     public partial class Frm_Main : Form
     {
-        Encryption encryption;
+        Encryptor encryptor;
 
 
         // Path variables for source, encryption, and
@@ -32,7 +32,7 @@ namespace Cryptor.UI
         {
             InitializeComponent();
             SetFoldersPaths();
-            encryption = new Encryption(keyName, encrFolder, decrFolder, pubKeyFile);
+            encryptor = new Encryptor(keyName, encrFolder, decrFolder, pubKeyFile);
         }
 
         private void SetFoldersPaths()
@@ -60,16 +60,16 @@ namespace Cryptor.UI
 
         private void buttonCreateAsmKeys_Click(object sender, EventArgs e)
         {
-            encryption.CreateAsmKeys();
-            if (encryption.Rsa.PublicOnly == true)
-                toolStripStatusLabel1.Text = "Key: " + encryption.Cspp.KeyContainerName + " - Public Only";
+            encryptor.CreateAsmKeys();
+            if (encryptor.Rsa.PublicOnly == true)
+                toolStripStatusLabel1.Text = "Key: " + encryptor.Cspp.KeyContainerName + " - Public Only";
             else
-                toolStripStatusLabel1.Text = "Key: " + encryption.Cspp.KeyContainerName + " - Full Key Pair";
+                toolStripStatusLabel1.Text = "Key: " + encryptor.Cspp.KeyContainerName + " - Full Key Pair";
         }
 
         private void buttonEncryptFile_Click(object sender, EventArgs e)
         {
-            if (encryption.Rsa == null)
+            if (encryptor.Rsa == null)
                 MessageBox.Show("Key not set.");
             else
             {
@@ -83,7 +83,7 @@ namespace Cryptor.UI
                         FileInfo fInfo = new FileInfo(fName);
                         // Pass the file name without the path.
                         string name = fInfo.FullName;
-                        encryption.EncryptFile(name);
+                        encryptor.EncryptFile(name);
                     }
                 }
             }
@@ -91,7 +91,7 @@ namespace Cryptor.UI
 
         private void buttonDecryptFile_Click(object sender, EventArgs e)
         {
-            if (encryption.Rsa == null)
+            if (encryptor.Rsa == null)
                 MessageBox.Show("Key not set.");
             else
             {
@@ -104,7 +104,7 @@ namespace Cryptor.UI
                     {
                         FileInfo fi = new FileInfo(fName);
                         string name = fi.Name;
-                        encryption.DecryptFile(name);
+                        encryptor.DecryptFile(name);
                     }
                 }
             }
@@ -112,26 +112,26 @@ namespace Cryptor.UI
 
         void buttonExportPublicKey_Click(object sender, EventArgs e)
         {
-            encryption.ExportPublicKey();
+            encryptor.ExportPublicKey();
         }
 
         void buttonImportPublicKey_Click(object sender, EventArgs e)
         {
-            encryption.ImportPublicKey();
-            if (encryption.Rsa.PublicOnly == true)
-                toolStripStatusLabel1.Text = "Key: " + encryption.Cspp.KeyContainerName + " - Public Only";
+            encryptor.ImportPublicKey();
+            if (encryptor.Rsa.PublicOnly == true)
+                toolStripStatusLabel1.Text = "Key: " + encryptor.Cspp.KeyContainerName + " - Public Only";
             else
-                toolStripStatusLabel1.Text = "Key: " + encryption.Cspp.KeyContainerName + " - Full Key Pair";
+                toolStripStatusLabel1.Text = "Key: " + encryptor.Cspp.KeyContainerName + " - Full Key Pair";
         }
 
         private void buttonGetPrivateKey_Click(object sender, EventArgs e)
         {
-            encryption.GetPrivateKey();
+            encryptor.GetPrivateKey();
 
-            if (encryption.Rsa.PublicOnly == true)
-                toolStripStatusLabel1.Text = "Key: " + encryption.Cspp.KeyContainerName + " - Public Only";
+            if (encryptor.Rsa.PublicOnly == true)
+                toolStripStatusLabel1.Text = "Key: " + encryptor.Cspp.KeyContainerName + " - Public Only";
             else
-                toolStripStatusLabel1.Text = "Key: " + encryption.Cspp.KeyContainerName + " - Full Key Pair";
+                toolStripStatusLabel1.Text = "Key: " + encryptor.Cspp.KeyContainerName + " - Full Key Pair";
         }
 
         private void mnuSettings_Click(object sender, EventArgs e)

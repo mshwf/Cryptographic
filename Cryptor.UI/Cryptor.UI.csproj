@@ -69,7 +69,7 @@
     <EmbeddedResource Include="Frm_Settings.resx">
       <DependentUpon>Frm_Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <Content Include="initialData.xml">
+    <Content Include="Settings.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
