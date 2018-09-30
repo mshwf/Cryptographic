@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using Cryptor.UI.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -8,10 +9,12 @@ namespace Cryptor.Tests
     public class XmlDocTest
     {
         XMLDoc doc;
+        private void InitGoodXmlDoc() => doc = new XMLDoc("Settings.xml");
+        
         [TestMethod]
         public void Test_All_Paths_Are_Set()
         {
-            doc = new XMLDoc("initialData.xml");
+            InitGoodXmlDoc();
             var value = doc.GetValueOf("pubKeyFile");
             Assert.AreEqual(value, "");
         }
@@ -19,6 +22,7 @@ namespace Cryptor.Tests
         [TestMethod]
         public void Test_Set_And_Get_Tag_Value()
         {
+            InitGoodXmlDoc();
             doc.SetValueOf("pubKeyFile", "dummyFile.txt");
             var value = doc.GetValueOf("pubKeyFile");
             Assert.AreEqual(value, "dummyFile.txt");
